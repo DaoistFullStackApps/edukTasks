@@ -24,3 +24,7 @@ Route::get('/dashboard', [Controller::class, 'dashboard']);
 
 Route::get('register', [Controller::class, 'create'])->name('register');
 Route::post('register', [Controller::class, 'saveUser']);
+
+
+//rome task
+Route::get('/testWelcome/{user}', [Controller::class, 'testWelcome'])->name('testWelcome');

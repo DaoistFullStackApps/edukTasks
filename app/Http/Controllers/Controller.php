@@ -29,6 +29,14 @@ class Controller extends BaseController
         return view('user.dashboard');
     }
 
+    public function testWelcome($firstname)
+    {
+        $user = User::findOrFail($firstname); 
+        return view('user.testWelcome',[
+            'user' => $user,
+        ]);
+    }
+
     public function saveUser(Request $request)
     {
         $request->validate([
@@ -49,6 +57,6 @@ class Controller extends BaseController
 
         Auth::login($user);
 
-        return redirect(RouteServiceProvider::HOME);
+        return redirect()->route('testWelcome', ['user' => $user->id]);
     }
-}
+} 
