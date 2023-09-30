@@ -15,7 +15,7 @@ use App\Http\Controllers\Controller;
 */
 
 Route::get('/', function () {
-    return view('user.register');
+    return view('components.registerForm');
 });
 
 

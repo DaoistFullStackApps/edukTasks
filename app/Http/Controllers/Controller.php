@@ -21,7 +21,7 @@ class Controller extends BaseController
 
     public function create()
     {
-        return view('user.register');
+        return view('components.registerForm');
     }
 
     public function dashboard()
