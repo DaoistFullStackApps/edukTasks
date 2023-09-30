@@ -37,6 +37,39 @@ class Controller extends BaseController
         ]);
     }
 
+    public function testPlacement($firstname)
+    {
+        $user = User::findOrFail($firstname); 
+        return view('user.testPlacement',[
+            'user' => $user,
+        ]);
+    }
+
+
+    public function petSelection($firstname)
+    {
+        $user = User::findOrFail($firstname); 
+        return view('user.petSelection',[
+            'user' => $user,
+        ]);
+    }
+
+    public function avatarSelection($firstname)
+    {
+        $user = User::findOrFail($firstname); 
+        return view('user.avatarSelection',[
+            'user' => $user,
+        ]);
+    }
+
+    public function mapSelection($firstname)
+    {
+        $user = User::findOrFail($firstname); 
+        return view('user.mapSelection',[
+            'user' => $user,
+        ]);
+    }
+
     public function saveUser(Request $request)
     {
         $request->validate([

@@ -15,7 +15,7 @@ use App\Http\Controllers\Controller;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('user.register');
 });
 
 
@@ -27,4 +27,12 @@ Route::post('register', [Controller::class, 'saveUser']);
 
 
 //rome task
-Route::get('/testWelcome/{user}', [Controller::class, 'testWelcome'])->name('testWelcome');
+Route::get('/welcome/{user}', [Controller::class, 'testWelcome'])->name('testWelcome');
+
+Route::get('/placement/{user}', [Controller::class, 'testPlacement'])->name('testPlacement');
+
+Route::get('/pet/{user}', [Controller::class, 'petSelection'])->name('petSelection');
+
+Route::get('/avatar/{user}', [Controller::class, 'avatarSelection'])->name('avatarSelection');
+
+Route::get('/map/{user}', [Controller::class, 'mapSelection'])->name('mapSelection');
