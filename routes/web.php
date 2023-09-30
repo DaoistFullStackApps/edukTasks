@@ -15,7 +15,7 @@ use App\Http\Controllers\Controller;
 */
 
 Route::get('/', function () {
-    return view('components.registerForm');
+    return view('components.loginForm');
 });
 
 
@@ -24,6 +24,8 @@ Route::get('/dashboard', [Controller::class, 'dashboard']);
 
 Route::get('register', [Controller::class, 'create'])->name('register');
 Route::post('register', [Controller::class, 'saveUser']);
+
+Route::get('login', [Controller::class, 'login'])->name('login');
 
 
 //rome task

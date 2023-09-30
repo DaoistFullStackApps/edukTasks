@@ -19,6 +19,11 @@ class Controller extends BaseController
     use AuthorizesRequests, ValidatesRequests;
 
 
+    public function login()
+    {
+        return view('components.loginForm');
+    }
+
     public function create()
     {
         return view('components.registerForm');

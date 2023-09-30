@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{asset('assets/css/registration-page.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/login-form.css')}}">
     <title>Document</title>
 </head>
 
@@ -18,10 +19,14 @@
                 <h3 class="register-page-title">Mathayog</h3>
             </div>
             <div class="register-page-description">
+                @if(Route::currentRouteName() == 'register')
                 <p class="page-description">Maglibot-libot sa Pagsusuri ng <br>Matematika sa Buong Pilipinas</p>
+                @elseif(Route::currentRouteName() == 'login')
+                <p class="page-description">Buksan ang mga Lihim ng mga <br>Lungsod sa Buong Pilipinas <br>Gamit ang Matematika</p>
+                @endif
             </div>
         </div>
-
+        
         <div class="form-container">
             <!-- form component -->
             @yield('content')
