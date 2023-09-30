@@ -15,7 +15,19 @@
             <label for="password" class="registration-label">Password</label>
             <input type="password" id="password" name="password" required class="registration-input">
         </div>
+
+        <div class="login-mid-content">
+            <input type="radio">
+            <p>Remember Me</p>
+            <p>Forgot Password</p>
+        </div>
+
         <button type="submit" class="registration-btn">Mag-Login</button>
+
+        <div class="login-bottom-content">
+            <p class="register-text">Don't have an account?</p>
+            <a href="{{ route('register') }}" class="register-link"> Sign Up</a>
+        </div>
     </form>
 </div>
 @endsection

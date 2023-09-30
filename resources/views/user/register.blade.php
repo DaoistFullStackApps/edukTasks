@@ -21,12 +21,12 @@
             <div class="register-page-description">
                 @if(Route::currentRouteName() == 'register')
                 <p class="page-description">Maglibot-libot sa Pagsusuri ng <br>Matematika sa Buong Pilipinas</p>
-                @elseif(Route::currentRouteName() == 'login')
+                @else
                 <p class="page-description">Buksan ang mga Lihim ng mga <br>Lungsod sa Buong Pilipinas <br>Gamit ang Matematika</p>
                 @endif
             </div>
         </div>
-        
+
         <div class="form-container">
             <!-- form component -->
             @yield('content')

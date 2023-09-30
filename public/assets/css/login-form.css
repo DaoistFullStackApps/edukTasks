@@ -17,88 +17,29 @@
   margin-top: 2vh;
 }
 
-.registration-form-title {
-  color: #4B4B4B;
-  text-align: center;
-
-  font-size: 1.8rem;
-
-  letter-spacing: 1px;
-  line-height: 2.5rem;
-}
-
-.dashed-line {
-  border-top: 4px dashed #E5E5E5;
-  width: 100%;
-  margin: 10px 0;
-  margin-bottom: 30px;
-}
-
-.page-form {
-  width: 28vw;
-}
-
-.registration-form-name {
+.login-bottom-content {
+  height: 3rem;
   display: flex;
-}
+  flex-direction: row;
+  gap: 1rem;
 
-.registration-form-firstname {
-  margin-right: 5%;
-}
+  align-items: center;
+  justify-content: center;
 
-.firstname {
-  width: 90%;
-}
-
-.lastname {
-  width: 90%;
-}
-
-.registration-label {
-  font-family: 'Omnes-Regular', sans-serif;
+  font-size: 1.5rem;
   color: #4B4B4B;
-  font-size: 1.25rem;
+
+  margin-top: 1vh;
 }
 
-.registration-input {
-  width: 100%;
-  height: 2rem;
-  border-radius: 10px;
-  border: 1px solid #E5E5E5;
-  font-family: 'Omnes-Regular',sans-serif;
-  font-weight: bold;
-  margin-bottom: 15px;
-  padding: 1.75rem;
-
-  font-size: 20px;
-  background-color: #F9F9F9;
-
+.register-text {
+  font-family: 'Omnes-Regular', sans-serif;
+  font-size: 1.5rem;
 }
 
-/* Style for the input when it's in focus (active) */
-.registration-input:focus {
-  outline-color: #859CFF; /* Change this to your desired border color */
-}
-
-
-.registration-btn {
-  height: 1.5rem;
-  font-family: 'Omnes-Bold', sans-serif;
-  font-size: 1.45rem;
-  color: white;
-  height: 3em;
-  width: 100%;
-  border-color: transparent;
-  background-color: #859CFF;
-  border-radius: 20px;
-  border-bottom: 12px solid #7187E4;
-  margin-top: 1.5rem;
-
-  transition: background-color 0.4s;
-}
-
-
-.registration-btn:hover {
-  background-color: #9CAFFF;
-  cursor: pointer;
+.register-link {
+  font-family: 'Omnes-Regular', sans-serif;
+  font-size: 1.5rem;
+  color: #88D758;
+  text-decoration: none;
 }
