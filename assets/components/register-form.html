@@ -4,8 +4,13 @@
         Sama na sa Adventura at Simulan <br />ang iyong Paglalakbay
     </h3>
     <div class="dashed-line"></div>
-    <form action="{{route('register')}}" class="page-form" method="POST">
-        <input type="hidden" name="_token" value="{{ csrf_token() }}" />
+
+    <form
+        action="#/login"
+        method="GET"
+        class="page-form"
+        onsubmit="redirectToLogin(event);"
+    >
         <div class="registration-form-name">
             <div class="registration-form-firstname">
                 <label for="firstname" class="registration-label"
@@ -67,7 +72,16 @@
                 class="registration-input"
             />
         </div>
-            <button type="submit" class="registration-btn">Mag-Register</button>
+        <button type="submit" class="registration-btn">Mag-Register</button>
     </form>
+
+    <!-- JavaScript code to redirect to #/login without form submission -->
+    <script>
+        function redirectToLogin(event) {
+            event.preventDefault(); // Prevent the default form submission
+            // Redirect to #/login
+            window.location.hash = "/login";
+        }
+    </script>
 </div>
 <!-- End of registration-form.html -->

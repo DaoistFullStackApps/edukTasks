@@ -30,40 +30,41 @@
             </div>
 
             <div class="form-container" id="form-container">
-                <!-- Your form content goes here -->
-                <!-- JavaScript code to load and replace the form -->
+                <!-- JavaScript code -->
                 <script>
-                    // Function to load and replace the registration form based on the current URL
-                    function formLoader() {
-                        const formContainer =
-                            document.getElementById("form-container");
-                        const currentURL = window.location.pathname;
+                    // Function to load and replace content based on the route
+                    function loadContent(route) {
+                        const container = document.getElementById("form-container");
 
-                        // Define the default HTML file
-                        let formURL = "assets/components/login-form.html";
+                        // Define the path to the HTML file corresponding to the route
+                        const filePath = `assets/components/${route}-form.html`;
 
-                        // Check if the current URL contains "/register"
-                        if (currentURL.includes("/register")) {
-                            formURL = "assets/components/registration-form.html";
-                        }
-
-                        // Fetch and load the appropriate form template
-                        fetch(formURL)
+                        // Fetch the content from the HTML file
+                        fetch(filePath)
                             .then((response) => response.text())
                             .then((html) => {
-                                // Insert the form template into the container
-                                formContainer.innerHTML = html;
+                                // Insert the fetched HTML content into the container
+                                container.innerHTML = html;
                             })
                             .catch((error) => {
-                                console.error(
-                                    "Error loading registration form:",
-                                    error
-                                );
+                                console.error("Error loading content:", error);
                             });
                     }
 
-                    // Call the function to load the registration form
-                    formLoader();
+                    // Function to handle route changes
+                    function handleRouteChange() {
+                        const hash = window.location.hash.substr(2); // Remove the '#' and '/'
+                        const route = hash || "login"; // Default to "login" if no hash
+
+                        // Load content based on the route
+                        loadContent(route);
+                    }
+
+                    // Add an event listener to handle route changes
+                    window.addEventListener("hashchange", handleRouteChange);
+
+                    // Initial route handling
+                    handleRouteChange();
                 </script>
             </div>
         </div>
