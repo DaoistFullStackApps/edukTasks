@@ -34,7 +34,7 @@ function updateDescription(route) {
 
 // Function to handle route changes
 function handleRouteChange() {
-    const hash = window.location.hash.slice(2); // Remove the '#' and '/'
+    const hash = window.location.hash.substr(2); // Remove the '#' and '/'
     const route = hash || "login"; // Default to "login" if no hash
 
     // Load content based on the route
