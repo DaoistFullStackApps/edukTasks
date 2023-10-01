@@ -44,6 +44,22 @@ function handleRouteChange() {
     updateDescription(route);
 }
 
+function redirectToPlacement(event) {
+    // Prevent the default form submission
+    event.preventDefault(); 
+
+    // Redirect to the external URL
+    window.location.href = "/placement";
+}
+
+
+function redirectToLogin(event) {
+    // Prevent the default form submission
+    event.preventDefault();
+    // Redirect to #/login
+    window.location.href = "#/login";
+}
+
 // Add an event listener to handle route changes
 window.addEventListener("hashchange", handleRouteChange);
 
