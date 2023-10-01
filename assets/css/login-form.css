@@ -49,8 +49,8 @@
   gap: 0.5em;
 }
 
-.login-bottom-content {
-  height: 3rem;
+.form-bottom-content {
+  height: 2rem;
   display: flex;
   flex-direction: row;
   gap: 1rem;
@@ -58,20 +58,18 @@
   align-items: center;
   justify-content: center;
 
-  font-size: 1.5rem;
+  margin-top: 1.5vh;
+}
+
+.form-bottom-text {
   color: #4B4B4B;
-
-  margin-top: 1vh;
+  font-family: 'Omnes-Regular', sans-serif;
+  font-size: 1.4rem;
 }
 
-.register-text {
+.form-bottom-link {
   font-family: 'Omnes-Regular', sans-serif;
-  font-size: 1.5rem;
-}
-
-.register-link {
-  font-family: 'Omnes-Regular', sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   color: #88D758;
   text-decoration: none;
 }

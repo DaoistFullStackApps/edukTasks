@@ -87,7 +87,7 @@
 
     background-color: white;
     border-radius: 25px;
-    padding: 2.5rem;
+    padding: 2rem 2rem 1rem;
 
     box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.07);
     border-radius: 20px;
@@ -173,7 +173,8 @@
     background-color: #859CFF;
     border-radius: 20px;
     border-bottom: 12px solid #7187E4;
-    margin-top: 1.5rem;
+
+    margin-top: 2vh;
 
     transition: background-color 0.4s;
 }
@@ -183,3 +184,4 @@
     background-color: #9CAFFF;
     cursor: pointer;
 }
+
