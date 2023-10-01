@@ -15,7 +15,12 @@
   src: url('../fonts/Omnes-Regular.woff') format('woff');
 }
 
-.mainContainer {
+@font-face {
+  font-family: 'Omnes-SemiBold'; /* You can specify any name you want */
+  src: url('../fonts/Omnes-SemiBold.woff') format('woff');
+}
+
+.main-container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -24,16 +29,16 @@
 
 .btn {
   font-family: 'Omnes-Bold', sans-serif;
-  font-size: 1.75rem;
+  font-size: 2rem;
   color: white;
   height: 4.5rem;
-  width: 45%;
+  width: 33%;
   border-color: transparent;
   background-color: #859CFF;
   border-radius: 20px;
   border-bottom: 12px solid #7187E4;
 
-  margin-top: 4vh;
+  margin-top: 1vh;
 
   transition: background-color 0.4s;
 }

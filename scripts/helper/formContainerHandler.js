@@ -23,7 +23,7 @@ function updateDescription(route) {
 
     // Map routes to HTML content
     const routeContent = {
-        login: "Buksan ang mga Lihim ng mga <br>Lungsod sa Buong Pilipinas <br>Gamit ang Matematika",
+        login: "Unlock the secrets of the <br>Cities and islands of the Philippines <br>Using Math",
         register: "Maglibot-libot sa Pagsusuri ng <br>Matematika sa Buong Pilipinas",
         // Add more HTML content for other routes as needed
     };

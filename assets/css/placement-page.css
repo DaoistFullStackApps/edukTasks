@@ -1,7 +1,7 @@
 .placementContainer {
   width: 100vw;
   height: 90vh;
-  background-image: url('../images/backgrounds/placement_bg.PNG'); /* Replace 'path-to-your-image.jpg' with the actual image file path */
+  background-image: url('../images/backgrounds/placement_content.PNG'); /* Replace 'path-to-your-image.jpg' with the actual image file path */
   background-size: cover; /* Adjust to your preferred size option */
   background-repeat: no-repeat; /* Prevent the image from repeating */
   /* Additional background properties can be added as needed */
