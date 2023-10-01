@@ -18,6 +18,15 @@
     src: url('../fonts/Omnes-Regular.woff') format('woff');
 }
 
+@keyframes fadeIn {
+    from {
+      opacity: 0; /* Start with 0 opacity */
+    }
+    to {
+      opacity: 1; /* End with full opacity (visible) */
+    }
+  }
+
 .register-container {
     width: 100vw;
     height: 100vh;
@@ -93,6 +102,12 @@
     border-radius: 20px;
 
     margin-top: 2vh;
+
+    animation-name: fadeIn; /* Reference the animation keyframes */
+    animation-duration: 0.75s; /* Duration of the animation */
+    animation-timing-function: ease-in-out; /* Timing function for smooth animation */
+    animation-fill-mode: forwards; /* Keeps the final state of the animation */
+    opacity: 0; /* Start with 0 opacity (invisible) */
 }
 
 .registration-form-title {
