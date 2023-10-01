@@ -1,10 +1,15 @@
 <!-- login-form.html -->
 <div class="login-form">
     <h3 class="registration-form-title">
-        Log in and Join the <br>Exciting Adventure
+        Log in and Join the <br />Exciting Adventure
     </h3>
     <div class="dashed-line"></div>
-    <form action="{{route('login')}}" class="page-form" method="POST">
+    <form
+        class="page-form"
+        action="#/placement"
+        method="POST"
+        onsubmit="redirectToPlacement(event);"
+    >
         <div>
             <label for="email" class="registration-label">Email</label>
             <input
@@ -42,5 +47,14 @@
             <a href="#/register" class="form-bottom-link">Sign Up</a>
         </div>
     </form>
+
+    <!-- JavaScript code to redirect to #/placement without form submission -->
+    <script>
+        function redirectToPlacement(event) {
+            event.preventDefault(); // Prevent the default form submission
+            // Redirect to #/login
+            window.location.hash = "/placement";
+        }
+    </script>
 </div>
 <!--Start of login-form.html -->
