@@ -49,7 +49,7 @@ function redirectToPlacement(event) {
     event.preventDefault(); 
 
     // Redirect to the external URL
-    window.location.hash= "/placement";
+    window.location.hash.slice(2)= "/placement";
 }
 
 
