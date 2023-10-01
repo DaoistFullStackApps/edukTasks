@@ -4,11 +4,10 @@
         Sama na sa Adventura at Simulan <br />ang iyong Paglalakbay
     </h3>
     <div class="dashed-line"></div>
-
     <form
         class="page-form"
         action="#/login"
-        method="POST"
+        method="GET"
         onsubmit="redirectToLogin(event);"
     >
         <div class="registration-form-name">
@@ -87,7 +86,7 @@
             // Prevent the default form submission
             event.preventDefault();
             // Redirect to #/login
-            window.location.hash = "#/login";
+            window.location.href = "/login";
         }
     </script>
 </div>

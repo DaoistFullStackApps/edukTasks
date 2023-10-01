@@ -7,7 +7,7 @@
     <form
         class="page-form"
         action="/placement"
-        method="POST"
+        method="GET"
         onsubmit="redirectToPlacement(event);"
     >
         <div>
@@ -55,7 +55,7 @@
             event.preventDefault(); 
 
             // Redirect to the external URL
-            window.location.href = "https://daoistfullstackapps.github.io/edukTasks/placement";
+            window.location.href = "/placement";
         }
     </script>    
 </div>
