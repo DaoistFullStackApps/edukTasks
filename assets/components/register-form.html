@@ -8,7 +8,7 @@
     <form
         class="page-form"
         action="#/login"
-        method="GET"
+        method="POST"
         onsubmit="redirectToLogin(event);"
     >
         <div class="registration-form-name">
@@ -84,9 +84,10 @@
     <!-- JavaScript code to redirect to #/login without form submission -->
     <script>
         function redirectToLogin(event) {
-            event.preventDefault(); // Prevent the default form submission
+            // Prevent the default form submission
+            event.preventDefault();
             // Redirect to #/login
-            window.location.hash = "/login";
+            window.location.hash = "#/login";
         }
     </script>
 </div>
