@@ -58,7 +58,7 @@
 
 .page-description {
     color: white;
-    font-size: 2.5rem;
+    font-size: 2.75rem;
     letter-spacing: 2px;
 
     line-height: 3rem;
@@ -87,7 +87,7 @@
 
     background-color: white;
     border-radius: 25px;
-    padding: 2rem 2rem 1rem;
+    padding: 1.75rem 2rem 1rem;
 
     box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.07);
     border-radius: 20px;
@@ -99,12 +99,12 @@
     color: #4B4B4B;
     text-align: center;
 
-    font-size: 1.8rem;
+    font-size: 2rem;
 
     letter-spacing: 1px;
     line-height: 2.5rem;
 
-    padding-bottom: 3rem;
+    padding-bottom: 2.25rem;
 }
 
 .dashed-line {

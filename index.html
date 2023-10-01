@@ -7,7 +7,11 @@
         <link rel="stylesheet" href="assets/css/registration-page.css" />
         <link rel="stylesheet" href="assets/css/login-form.css" />
 
-        <link rel="icon" href="assets/images/icons/mathayog_logo.ico" type="image/x-icon">
+        <link
+            rel="icon"
+            href="assets/images/icons/mathayog_logo.ico"
+            type="image/x-icon"
+        />
         <title>Mathayog</title>
     </head>
 
@@ -23,51 +27,14 @@
                     <h3 class="register-page-title">Mathayog</h3>
                 </div>
                 <div class="register-page-description">
-                    <p class="page-description">
-                        Maglibot-libot sa Pagsusuri ng <br />Matematika sa Buong
-                        Pilipinas
-                    </p>
-                    <!-- <p class="page-description">Buksan ang mga Lihim ng mga <br>Lungsod sa Buong Pilipinas <br>Gamit ang Matematika</p> -->
+                    <p class="page-description" id="page-description"></p>
                 </div>
             </div>
 
             <div class="form-container" id="form-container">
-                <!-- JavaScript code -->
-                <script>
-                    // Function to load and replace content based on the route
-                    function loadContent(route) {
-                        const container = document.getElementById("form-container");
-
-                        // Define the path to the HTML file corresponding to the route
-                        const filePath = `assets/components/${route}-form.html`;
-
-                        // Fetch the content from the HTML file
-                        fetch(filePath)
-                            .then((response) => response.text())
-                            .then((html) => {
-                                // Insert the fetched HTML content into the container
-                                container.innerHTML = html;
-                            })
-                            .catch((error) => {
-                                console.error("Error loading content:", error);
-                            });
-                    }
-
-                    // Function to handle route changes
-                    function handleRouteChange() {
-                        const hash = window.location.hash.substr(2); // Remove the '#' and '/'
-                        const route = hash || "login"; // Default to "login" if no hash
-
-                        // Load content based on the route
-                        loadContent(route);
-                    }
-
-                    // Add an event listener to handle route changes
-                    window.addEventListener("hashchange", handleRouteChange);
-
-                    // Initial route handling
-                    handleRouteChange();
-                </script>
+                <!-- component javaScript code -->
+                <script src="scripts/helper/formContainerHandler.js"></script>
+                <!-- component javaScript code -->
             </div>
         </div>
     </body>
