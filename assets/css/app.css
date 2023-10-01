@@ -21,3 +21,25 @@
   justify-content: center;
   height: 90vh;
 }
+
+.btn {
+  font-family: 'Omnes-Bold', sans-serif;
+  font-size: 1.75rem;
+  color: white;
+  height: 4.5rem;
+  width: 45%;
+  border-color: transparent;
+  background-color: #859CFF;
+  border-radius: 20px;
+  border-bottom: 12px solid #7187E4;
+
+  margin-top: 4vh;
+
+  transition: background-color 0.4s;
+}
+
+
+.btn:hover {
+  background-color: #9CAFFF;
+  cursor: pointer;
+}
