@@ -80,11 +80,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    gap: 1.25rem;
+    justify-content: space-evenly;
 
     width: 80%;
     height: 95%;
+
     background-color: white;
     border-radius: 25px;
     padding: 2.5rem;
@@ -103,6 +103,8 @@
 
     letter-spacing: 1px;
     line-height: 2.5rem;
+
+    padding-bottom: 3rem;
 }
 
 .dashed-line {
@@ -114,7 +116,9 @@
 
 .page-form {
     width: 28vw;
+    height: auto;
 }
+
 
 .registration-form-name {
     display: flex;
@@ -157,7 +161,6 @@
 .registration-input:focus {
     outline-color: #859CFF; /* Change this to your desired border color */
 }
-
 
 .registration-btn {
     height: 1.5rem;
