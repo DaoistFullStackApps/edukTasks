@@ -20,6 +20,16 @@
   src: url('../fonts/Omnes-SemiBold.woff') format('woff');
 }
 
+/* Define the keyframes for the fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0; /* Start with 0 opacity */
+  }
+  to {
+    opacity: 1; /* End with full opacity (visible) */
+  }
+}
+
 .main-container {
   display: flex;
   align-items: center;

@@ -26,6 +26,12 @@
   height: 100%;
   background: rgba(105, 215, 246, 0.8); /* Background color with opacity */
   z-index: 1;
+
+  animation-name: fadeIn; /* Reference the animation keyframes */
+  animation-duration: 0.5s; /* Duration of the animation */
+  animation-timing-function: ease-in-out; /* Timing function for smooth animation */
+  animation-fill-mode: forwards; /* Keeps the final state of the animation */
+  opacity: 0; /* Start with 0 opacity (invisible) */
 }
  
 
@@ -40,6 +46,12 @@
   padding: 2rem;
   position: relative;
   z-index: 3;
+
+  animation-name: fadeIn; /* Reference the animation keyframes */
+  animation-duration: 1.75s; /* Duration of the animation */
+  animation-timing-function: ease-in-out; /* Timing function for smooth animation */
+  animation-fill-mode: forwards; /* Keeps the final state of the animation */
+  opacity: 0; /* Start with 0 opacity (invisible) */
 }
 
 #dialog-bubble {
@@ -53,7 +65,7 @@
   background-color: #ffffff;
 
   border-radius: 20px;
-  box-shadow: 1rem 1rem 0px rgba(0, 0, 0, 0.08);
+  box-shadow: 1rem 1rem 0px rgba(0, 0, 0, 0.2);
 
   padding: 2.5rem;
   margin-top: 1vh;
@@ -109,6 +121,12 @@
 .avatar-section img {
   min-width: 19vw;
   height: auto;
+
+  animation-name: fadeIn; /* Reference the animation keyframes */
+  animation-duration: 0.75s; /* Duration of the animation */
+  animation-timing-function: ease-in-out; /* Timing function for smooth animation */
+  animation-fill-mode: forwards; /* Keeps the final state of the animation */
+  opacity: 0; /* Start with 0 opacity (invisible) */
 }
 
 .messageContainer {
