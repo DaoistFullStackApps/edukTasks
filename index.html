@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="assets/css/registration-page.css" />
+        <!-- <link rel="stylesheet" href="assets/css/login-form.css" /> -->
+        <title>Document</title>
+    </head>
+
+    <body>
+        <div class="register-container">
+            <div class="register-page-title-description">
+                <div class="register-page-icon-title" style="display: flex">
+                    <img
+                        class="register-page-icon"
+                        src="assets/images/svgs/mathayog_logo.svg"
+                        alt=""
+                    />
+                    <h3 class="register-page-title">Mathayog</h3>
+                </div>
+                <div class="register-page-description">
+                    <p class="page-description">
+                        Maglibot-libot sa Pagsusuri ng <br />Matematika sa Buong
+                        Pilipinas
+                    </p>
+                    <!-- <p class="page-description">Buksan ang mga Lihim ng mga <br>Lungsod sa Buong Pilipinas <br>Gamit ang Matematika</p> -->
+                </div>
+            </div>
+
+            <div class="form-container" id="form-container">
+                <!-- Your form content goes here -->
+                <!-- JavaScript code to load and replace the form -->
+                <script>
+                    // Function to load and replace the registration form
+                    function loadRegistrationForm() {
+                        // Fetch the registration form template
+                        fetch("assets/components/registration-form.html")
+                            .then((response) => response.text())
+                            .then((html) => {
+                                // Insert the form template into the container
+                                document.getElementById(
+                                    "form-container"
+                                ).innerHTML = html;
+                            })
+                            .catch((error) => {
+                                console.error(
+                                    "Error loading registration form:",
+                                    error
+                                );
+                            });
+                    }
+                    // Call the function to load the registration form
+                    loadRegistrationForm();
+                </script>
+            </div>
+        </div>
+    </body>
+</html>
