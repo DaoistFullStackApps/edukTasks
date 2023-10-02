@@ -16,6 +16,38 @@
             type="image/x-icon"
         />
         <title>Mathayog</title>
+
+        <style>
+            /* CSS to style your pop-up div */
+            .pop-up {
+                display: flex;
+                align-items: baseline;
+                justify-content: flex-end;
+
+                position: fixed;
+                bottom: -100%; /* Initially hidden below the screen */
+                left: 0;
+
+                height: 8rem;
+                width: 100%;
+                background-color: #ffffff;
+                transition: bottom 0.3s ease-in-out; /* Adjust the duration and easing as needed */
+
+                box-shadow: 0px -5px 15px rgba(0, 0, 0, 0.1);
+                padding: 1rem;
+                z-index: 999; /* Adjust the z-index as needed */
+            }
+
+            /* CSS class to hide the pop-up div */
+            .hidden {
+                display: none;
+            }
+
+            .card-selected {
+                border: 0.5rem solid #859cff;
+                box-shadow: 15px 15px 0px rgba(0, 0, 0, 0.07);
+            }
+        </style>
     </head>
 
     <body>
@@ -31,8 +63,7 @@
                         <p>Mathayog</p>
                     </div>
 
-                    <div class="userSection">
-                    </div>
+                    <div class="userSection"></div>
                 </div>
             </nav>
 
@@ -46,12 +77,18 @@
                                 class="selection-user-icon"
                             />
                             <div class="pet-bubble">
-                                <h3 class="avatar-bubble-title">Choose your Avatar!</h3>
+                                <h3 class="avatar-bubble-title">
+                                    Choose your Avatar!
+                                </h3>
                             </div>
                             <div class="pet-bubble-tail"></div>
                         </div>
                         <div class="pet-content-section">
-                            <div class="pet-card">
+                            <div
+                                class="pet-card"
+                                id="pet-card1"
+                                onclick="showPopUp(1)"
+                            >
                                 <div class="pet-img-frame">
                                     <img
                                         src="../assets/images/svgs/avatar1.svg"
@@ -68,7 +105,11 @@
                                 </div>
                             </div>
 
-                            <div class="pet-card">
+                            <div
+                                class="pet-card"
+                                id="pet-card2"
+                                onclick="showPopUp(2)"
+                            >
                                 <div class="pet-img-frame">
                                     <img
                                         src="../assets/images/svgs/avatar1.svg"
@@ -85,7 +126,11 @@
                                 </div>
                             </div>
 
-                            <div class="pet-card">
+                            <div
+                                class="pet-card"
+                                id="pet-card3"
+                                onclick="showPopUp(3)"
+                            >
                                 <div class="pet-img-frame">
                                     <img
                                         src="../assets/images/svgs/avatar1.svg"
@@ -104,43 +149,34 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="pop-up hidden" id="pop-up">
+                    <button
+                        class="btn"
+                        style="width: 22rem; height: 5rem; margin-right: 8rem"
+                    >
+                        Next
+                    </button>
+                </div>
             </main>
         </div>
     </body>
     <script>
-        // Define an array of text content for each part
-        const bubbleContentArray = [
-            "<p>I'll be your guide in this adventure to explore the islands and cities of the Philippines.</p>",
-            '<p>What is your name?</p><input type = "text" id = "user-name-input"></input>',
-            "<p>Hi Juan! I’m Bayani</p>",
-        ];
+        function showPopUp(selectedCard) {
+            const popUp = document.getElementById("pop-up");
+            popUp.style.bottom = "0"; // Show the pop-up by setting bottom to 0
+            popUp.classList.remove("hidden"); // Remove the 'hidden' class
 
-        // Initialize a variable to keep track of the current text index
-        let currentContentIndex = 0;
+            // Remove the 'card-selected' class from all pet-card elements
+            document.querySelectorAll(".pet-card").forEach((card) => {
+                card.classList.remove("card-selected");
+            });
 
-        // Get references to elements
-        const bubbleContent = document.getElementById("bubble-content");
-        const nextButton = document.getElementById("next-button");
-
-        // Function to update the text content
-        function updateBubbleContent() {
-            if (currentContentIndex < bubbleContentArray.length) {
-                bubbleContent.innerHTML =
-                    bubbleContentArray[currentContentIndex];
-                currentContentIndex++;
-            } else {
-                // You've reached the end of the text content
-                bubbleContent.innerHTML =
-                    "<p>Now let's choose your Avatar.</p>";
-                nextButton.innerHTML =
-                    '<a href="/avatar" style="text-decoration: none; color: white;">Next</a>';
-            }
+            // Add the 'card-selected' class to the selected pet-card
+            const selectedPetCard = document.getElementById(
+                `pet-card${selectedCard}`
+            );
+            selectedPetCard.classList.add("card-selected");
         }
-
-        // Add a click event listener to the button
-        nextButton.addEventListener("click", updateBubbleContent);
-
-        // Initial update of text content
-        updateBubbleContent();
     </script>
 </html>

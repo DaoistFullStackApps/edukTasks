@@ -152,8 +152,6 @@
 }
 
 .pet-card:hover {
-  border: 0.5rem solid #859CFF;
-  box-shadow: 15px 15px 0px rgba(0, 0, 0, 0.07);
   cursor: pointer;
 }
 
