@@ -105,6 +105,14 @@
 
 }
 
+.map-bubble-title {
+  font-family: 'Omnes-Bold', sans-serif;
+  font-size: 2.25rem;
+
+  word-spacing: 0.25rem;
+  line-height: 2.75rem;
+}
+
 .map-bubble h3 {
   font-family: 'Omnes-Bold', sans-serif;
   font-size: 1.75rem;
@@ -155,6 +163,32 @@
   cursor: pointer;
 }
 
+
+.map-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+
+  width: 28%;
+  max-height: 47vh;
+  min-height: fit-content;
+
+  background: #FFFFFF;
+  box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.07);
+  border-radius: 20px;
+  transition: border 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+
+  margin: 0 1rem 0;
+
+  padding: 1.75rem;
+  color: #4B4B4B;
+}
+
+.map-card:hover {
+  cursor: pointer;
+}
+
 .pet-img-frame {
   width: 16rem;
   height: 11rem;
@@ -171,6 +205,7 @@
 }
 
 .pet-text-content {
+  width: 90%;
   text-align: left;
 }
 

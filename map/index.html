@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="../assets/css/app.css" />
+        <link rel="stylesheet" href="../assets/css/nav-bar.css" />
+        <link rel="stylesheet" href="../assets/css/welcome-page.css" />
+        <link rel="stylesheet" href="../assets/css/selection-page.css" />
+        <link rel="stylesheet" href="../assets/css/placement-page.css" />
+
+        <link
+            rel="icon"
+            href="../assets/images/icons/mathayog_logo.ico"
+            type="image/x-icon"
+        />
+        <title>Mathayog</title>
+
+        <style>
+            /* CSS to style your pop-up div */
+            .pop-up {
+                display: flex;
+                align-items: baseline;
+                justify-content: flex-end;
+
+                position: fixed;
+                bottom: -100%; /* Initially hidden below the screen */
+                left: 0;
+
+                height: 8rem;
+                width: 100%;
+                background-color: #ffffff;
+                transition: bottom 5s ease-in-out; /* Adjust the duration and easing as needed */
+
+                box-shadow: 0px -5px 15px rgba(0, 0, 0, 0.1);
+                padding: 1rem;
+                z-index: 999; /* Adjust the z-index as needed */
+            }
+
+            /* CSS class to hide the pop-up div */
+            .hidden {
+                display: none;
+            }
+
+            .card-selected {
+                border: 0.5rem solid #859cff;
+                box-shadow: 15px 15px 0px rgba(0, 0, 0, 0.07);
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="app">
+            <nav class="navbar">
+                <div class="navContainer">
+                    <div class="logoSection">
+                        <img
+                            src="../assets/images/svgs/mathayog_logo.svg"
+                            alt="mathayog icon"
+                            id="logoIcon"
+                        />
+                        <p>Mathayog</p>
+                    </div>
+
+                    <div class="userSection">
+                        <p>Juan dela Cruz</p>
+                        <img
+                            src="../assets/images/icons/userIcon.png"
+                            alt="user icon"
+                            id="userIcon"
+                        />
+                    </div>
+                </div>
+            </nav>
+
+            <main class="main-container" id="root">
+                <div class="selection-container">
+                    <div class="pet-selection-container">
+                        <div class="pet-title-section">
+                            <img
+                                src="../assets/images/svgs/selection_pet_icon.svg"
+                                alt="selectionUserIcon"
+                                class="selection-user-icon"
+                            />
+                            <div class="pet-bubble">
+                                <h3 class="map-bubble-title">
+                                    Which one do you want to board? 
+                                </h3>
+                            </div>
+                            <div class="pet-bubble-tail"></div>
+                        </div>
+                        <div class="pet-content-section">
+                            <div
+                                class="map-card"
+                                id="map-card1"
+                                onclick="showPopUp(1)"
+                            >
+                                <div class="pet-img-frame">
+                                    <img
+                                        src="../assets/images/svgs/map1.svg"
+                                        alt="avatar1"
+                                        class="pet-img"
+                                    />
+                                </div>
+                                <div class="pet-text-content">
+                                    <h4>Plane 1</h4>
+                                </div>
+                            </div>
+
+                            <div
+                                class="map-card"
+                                id="map-card2"
+                                onclick="showPopUp(2)"
+                            >
+                                <div class="pet-img-frame">
+                                    <img
+                                        src="../assets/images/svgs/map2.svg"
+                                        alt="avatar2"
+                                        class="pet-img"
+                                    />
+                                </div>
+                                <div class="pet-text-content">
+                                    <h4>Plane 2</h4>
+                                </div>
+                            </div>
+
+                            <div
+                                class="map-card"
+                                id="map-card3"
+                                onclick="showPopUp(3)"
+                            >
+                                <div class="pet-img-frame">
+                                    <img
+                                        src="../assets/images/svgs/map3.svg"
+                                        alt="avatar3"
+                                        class="pet-img"
+                                    />
+                                </div>
+                                <div class="pet-text-content">
+                                    <h4>Plane 3</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pop-up hidden" id="pop-up">
+                    <button
+                        class="btn"
+                        style="width: 22rem; height: 5rem; margin-right: 8rem"
+                        onclick="navigateToNextPage()"
+                    >
+                        Next
+                    </button>
+                </div>
+            </main>
+        </div>
+    </body>
+    <script>
+        function showPopUp(selectedCard) {
+            const popUp = document.getElementById("pop-up");
+            popUp.style.bottom = "0"; // Show the pop-up by setting bottom to 0
+            popUp.classList.remove("hidden"); // Remove the 'hidden' class
+
+            // Remove the 'card-selected' class from all pet-card elements
+            document.querySelectorAll(".map-card").forEach((card) => {
+                card.classList.remove("card-selected");
+            });
+
+            // Add the 'card-selected' class to the selected map-card
+            const selectedMapCard = document.getElementById(
+                `map-card${selectedCard}`
+            );
+            selectedMapCard.classList.add("card-selected");
+        }
+
+        function navigateToNextPage() {
+            // Replace the URL with the desired URL
+            window.location.href =
+                "https://daoistfullstackapps.github.io/edukTasks/placement";
+        }
+    </script>
+</html>
