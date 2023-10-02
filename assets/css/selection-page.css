@@ -87,13 +87,22 @@
   border-right: 37px solid #FFFFFF;
 }
 
-.pet-bubble h3 {
+.avatar-bubble-title {
   font-family: 'Omnes-Bold', sans-serif;
   font-size: 2.75rem;
 
   line-height: 3.25rem;
 
   margin-left: 1.5vw;
+}
+
+.pet-bubble-title {
+  font-family: 'Omnes-Bold', sans-serif;
+  font-size: 2rem;
+
+  word-spacing: 0.25rem;
+  line-height: 2.5rem;
+
 }
 
 .map-bubble h3 {
