@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="../assets/css/app.css" />
+        <link rel="stylesheet" href="../assets/css/nav-bar.css" />
+        <link rel="stylesheet" href="../assets/css/welcome-page.css" />
+        <link rel="stylesheet" href="../assets/css/selection-page.css" />
+        <link rel="stylesheet" href="../assets/css/placement-page.css" />
+
+        <link
+            rel="icon"
+            href="../assets/images/icons/mathayog_logo.ico"
+            type="image/x-icon"
+        />
+        <title>Mathayog</title>
+    </head>
+
+    <body>
+        <div id="app">
+            <nav class="navbar">
+                <div class="navContainer">
+                    <div class="logoSection">
+                        <img
+                            src="../assets/images/svgs/mathayog_logo.svg"
+                            alt="mathayog icon"
+                            id="logoIcon"
+                        />
+                        <p>Mathayog</p>
+                    </div>
+
+                    <div class="userSection">
+                    </div>
+                </div>
+            </nav>
+
+            <main class="main-container" id="root">
+                <div class="selection-container">
+                    <div class="pet-selection-container">
+                        <div class="pet-title-section">
+                            <img
+                                src="../assets/images/svgs/selection_user_icon.svg"
+                                alt="selectionUserIcon"
+                                class="selection-user-icon"
+                            />
+                            <div class="pet-bubble">
+                                <h3>Choose your Avatar!</h3>
+                            </div>
+                            <div class="pet-bubble-tail"></div>
+                        </div>
+                        <div class="pet-content-section">
+                            <div class="pet-card">
+                                <div class="pet-img-frame">
+                                    <img
+                                        src="../assets/images/svgs/avatar1.svg"
+                                        alt="avatar1"
+                                        class="pet-img"
+                                    />
+                                </div>
+                                <div class="pet-text-content">
+                                    <h4>Bayani</h4>
+                                    <p>
+                                        Ang pinakamahusay na paglalakbay puno ng
+                                        matematika sa puso ng Pilipinas!
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="pet-card">
+                                <div class="pet-img-frame">
+                                    <img
+                                        src="../assets/images/svgs/avatar1.svg"
+                                        alt="avatar2"
+                                        class="pet-img"
+                                    />
+                                </div>
+                                <div class="pet-text-content">
+                                    <h4>Lakandula</h4>
+                                    <p>
+                                        Ang pinakamahusay na paglalakbay puno ng
+                                        matematika sa puso ng Pilipinas!
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="pet-card">
+                                <div class="pet-img-frame">
+                                    <img
+                                        src="../assets/images/svgs/avatar1.svg"
+                                        alt="avatar3"
+                                        class="pet-img"
+                                    />
+                                </div>
+                                <div class="pet-text-content">
+                                    <h4>Datu</h4>
+                                    <p>
+                                        Ang pinakamahusay na paglalakbay puno ng
+                                        matematika sa puso ng Pilipinas!
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </body>
+    <script>
+        // Define an array of text content for each part
+        const bubbleContentArray = [
+            "<p>I'll be your guide in this adventure to explore the islands and cities of the Philippines.</p>",
+            '<p>What is your name?</p><input type = "text" id = "user-name-input"></input>',
+            "<p>Hi Juan! I’m Bayani</p>",
+        ];
+
+        // Initialize a variable to keep track of the current text index
+        let currentContentIndex = 0;
+
+        // Get references to elements
+        const bubbleContent = document.getElementById("bubble-content");
+        const nextButton = document.getElementById("next-button");
+
+        // Function to update the text content
+        function updateBubbleContent() {
+            if (currentContentIndex < bubbleContentArray.length) {
+                bubbleContent.innerHTML =
+                    bubbleContentArray[currentContentIndex];
+                currentContentIndex++;
+            } else {
+                // You've reached the end of the text content
+                bubbleContent.innerHTML =
+                    "<p>Now let's choose your Avatar.</p>";
+                nextButton.innerHTML =
+                    '<a href="/avatar" style="text-decoration: none; color: white;">Next</a>';
+            }
+        }
+
+        // Add a click event listener to the button
+        nextButton.addEventListener("click", updateBubbleContent);
+
+        // Initial update of text content
+        updateBubbleContent();
+    </script>
+</html>
