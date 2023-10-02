@@ -92,11 +92,13 @@
     justify-content: space-evenly;
 
     width: 80%;
-    height: 90%;
+    max-height: 90%;
+    min-height: fit-content;
 
     background-color: white;
     border-radius: 25px;
-    padding: 1.25rem 2rem 0.75rem;
+    padding: 1.25rem 2rem;
+    gap: 1rem;
 
     box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.07);
     border-radius: 20px;
@@ -114,19 +116,15 @@
     color: #4B4B4B;
     text-align: center;
 
-    font-size: 2rem;
+    font-size: 1.75rem;
 
-    letter-spacing: 1px;
-    line-height: 2.5rem;
-
-    padding-bottom: 2.25rem;
+    width: 93%;
+    line-height: 150%;
 }
 
 .dashed-line {
     border-top: 4px dashed #E5E5E5;
-    width: 100%;
-    margin: 10px 0;
-    margin-bottom: 30px;
+    width: 90%;
 }
 
 .page-form {
