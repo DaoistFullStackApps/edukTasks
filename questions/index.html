@@ -46,16 +46,21 @@
                 <div class="welcome-container">
                     <div class="dialog-section">
                         <div id="dialog-bubble">
-                            <div class="bubble-text-content" id="bubble-content">
-
+                            <div
+                                class="bubble-text-content"
+                                id="bubble-content"
+                            ></div>
+                            <div class="bubble-bottom-section">
+                                <button class="btn" id="next-button">
+                                    Next
+                                </button>
                             </div>
-                            <button class="btn" id="next-button">Next</button>
                         </div>
                     </div>
-                    <div class="avatar-section">
+                    <div class="muning-section">
                         <img
-                            src="../assets/images/svgs/datu.svg"
-                            alt="datu-svg"
+                            src="../assets/images/svgs/muning.svg"
+                            alt="muning-svg"
                         />
                     </div>
                 </div>
@@ -65,10 +70,8 @@
     <script>
         // Define an array of text content for each part
         const bubbleContentArray = [
-            "<p>Hi! Juan I'm Lakandula</p>",
-            "<p>I'll be your guide in this adventure to explore the islands and cities of the Philippines.</p>",
-            "<p>Before we start, I need to know what your skills are.</p>",
-            "<p>In this adventure, you’ll need to answer some questions to get through challenges.</p>",
+            "<p>Great job!</p>",
+            "<p>Now, before we start our adventure, I need to know what your skills are.</p>",
         ];
 
         // Initialize a variable to keep track of the current text index
@@ -81,12 +84,15 @@
         // Function to update the text content
         function updateBubbleContent() {
             if (currentContentIndex < bubbleContentArray.length) {
-                bubbleContent.innerHTML = bubbleContentArray[currentContentIndex];
+                bubbleContent.innerHTML =
+                    bubbleContentArray[currentContentIndex];
                 currentContentIndex++;
             } else {
                 // You've reached the end of the text content
-                bubbleContent.innerHTML =  '<p>Let’s get to know each other better on the plane. Which one do you want to board?</p>';
-                nextButton.innerHTML = '<a href="https://daoistfullstackapps.github.io/edukTasks/map" style="text-decoration: none; color: white;">Next</a>';
+                bubbleContent.innerHTML =
+                    "<p>But first, let’s choose a plane to board.</p>";
+                nextButton.innerHTML =
+                    '<a href="https://daoistfullstackapps.github.io/edukTasks/map" style="text-decoration: none; color: white;">Next</a>';
             }
         }
 

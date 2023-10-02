@@ -163,6 +163,17 @@
   cursor: pointer;
 }
 
+.map-content-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+
+  width: 57%;
+  height: 50vh;
+  padding: 1.25rem;
+}
 
 .map-card {
   display: flex;
@@ -170,8 +181,8 @@
   align-items: center;
   gap: 2rem;
 
-  width: 28%;
-  max-height: 47vh;
+  width: 44%;
+  max-height: 50vh;
   min-height: fit-content;
 
   background: #FFFFFF;
@@ -219,4 +230,19 @@
   font-family: 'Omnes-Regular', sans-serif;
   font-size: 1.4rem;
   text-align: left;
+}
+
+.map-text-content {
+  width: 95%;
+  text-align: center;
+  padding-bottom: 0.25rem;
+}
+
+.map-text-content h4 {
+  font-family: 'Omnes-Bold', sans-serif;
+  font-size: 2rem;
+  word-spacing: 0.25rem;
+  line-height: 2.5rem;
+
+  margin-bottom: 0.25rem;
 }
