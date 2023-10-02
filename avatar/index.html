@@ -45,6 +45,10 @@
                 border: 0.5rem solid #859cff;
                 box-shadow: 15px 15px 0px rgba(0, 0, 0, 0.07);
             }
+
+            .grayscale {
+                filter: grayscale(100%);
+            }
         </style>
     </head>
 
@@ -150,6 +154,7 @@
 
                 <div class="pop-up slide-up" id="slide-up">
                     <button
+                        id="next-button"
                         class="btn"
                         style="width: 22rem; height: 5rem; margin-right: 8rem"
                         onclick="navigateToNextPage()"
@@ -164,9 +169,18 @@
         function showSlideUp(selectedCard) {
             const slideUp = document.getElementById("slide-up");
             slideUp.style.transform = "translateY(0%)"; // Slide it up
-            // Remove the 'card-selected' class from all pet-card elements
+
+            // Remove both classes from all pet cards
             document.querySelectorAll(".pet-card").forEach((card) => {
+                card.classList.remove("grayscale");
                 card.classList.remove("card-selected");
+            });
+
+            // Add the 'grayscale' class to unselected pet cards
+            document.querySelectorAll(".pet-card").forEach((card) => {
+                if (card.id !== `pet-card${selectedCard}`) {
+                    card.classList.add("grayscale");
+                }
             });
 
             // Add the 'card-selected' class to the selected pet-card
@@ -179,6 +193,12 @@
         function hideSlideUp() {
             const slideUp = document.getElementById("slide-up");
             slideUp.style.transform = "translateY(100%)"; // Slide it down to hide
+
+            // Remove the 'grayscale' class from all pet-card elements
+            document.querySelectorAll(".pet-card").forEach((card) => {
+                card.classList.remove("grayscale");
+                card.classList.remove("card-selected");
+            });
         }
 
         function navigateToNextPage() {
@@ -186,5 +206,15 @@
             window.location.href =
                 "https://daoistfullstackapps.github.io/edukTasks/pet";
         }
+        // Add an event listener to the document to handle clicks
+        document.addEventListener("click", function (event) {
+            // Check if the clicked element is not a pet card or the pop-up
+            if (
+                event.target.id == "slide-up" &&
+                event.target.id !== "next-button"
+            ) {
+                hideSlideUp(); // Hide the pop-up
+            }
+        });
     </script>
 </html>

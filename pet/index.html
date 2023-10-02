@@ -18,34 +18,36 @@
         <title>Mathayog</title>
 
         <style>
-            /* CSS to style your pop-up div */
-            .pop-up {
+            /* CSS to style your slide-up div */
+            .slide-up {
                 display: flex;
                 align-items: baseline;
                 justify-content: flex-end;
 
                 position: fixed;
-                bottom: -100%; /* Initially hidden below the screen */
+                bottom: 0; /* Initially at the bottom of the screen */
                 left: 0;
 
                 height: 8rem;
                 width: 100%;
                 background-color: #ffffff;
-                transition: bottom 5s ease-in-out; /* Adjust the duration and easing as needed */
+                transform: translateY(
+                    100%
+                ); /* Initially hidden below the screen */
+                transition: transform 0.5s ease-in-out; /* Adjust the duration and easing as needed */
 
                 box-shadow: 0px -5px 15px rgba(0, 0, 0, 0.1);
                 padding: 1rem;
                 z-index: 999; /* Adjust the z-index as needed */
             }
 
-            /* CSS class to hide the pop-up div */
-            .hidden {
-                display: none;
-            }
-
             .card-selected {
                 border: 0.5rem solid #859cff;
                 box-shadow: 15px 15px 0px rgba(0, 0, 0, 0.07);
+            }
+
+            .grayscale {
+                filter: grayscale(100%);
             }
         </style>
     </head>
@@ -95,7 +97,7 @@
                             <div
                                 class="pet-card"
                                 id="pet-card1"
-                                onclick="showPopUp(1)"
+                                onclick="showSlideUp(1)"
                             >
                                 <div class="pet-img-frame">
                                     <img
@@ -116,7 +118,7 @@
                             <div
                                 class="pet-card"
                                 id="pet-card2"
-                                onclick="showPopUp(2)"
+                                onclick="showSlideUp(2)"
                             >
                                 <div class="pet-img-frame">
                                     <img
@@ -137,7 +139,7 @@
                             <div
                                 class="pet-card"
                                 id="pet-card3"
-                                onclick="showPopUp(3)"
+                                onclick="showSlideUp(3)"
                             >
                                 <div class="pet-img-frame">
                                     <img
@@ -158,7 +160,7 @@
                     </div>
                 </div>
 
-                <div class="pop-up hidden" id="pop-up">
+                <div class="pop-up slide-up" id="slide-up">
                     <button
                         class="btn"
                         style="width: 22rem; height: 5rem; margin-right: 8rem"
@@ -171,14 +173,21 @@
         </div>
     </body>
     <script>
-        function showPopUp(selectedCard) {
-            const popUp = document.getElementById("pop-up");
-            popUp.style.bottom = "0"; // Show the pop-up by setting bottom to 0
-            popUp.classList.remove("hidden"); // Remove the 'hidden' class
+        function showSlideUp(selectedCard) {
+            const slideUp = document.getElementById("slide-up");
+            slideUp.style.transform = "translateY(0%)"; // Slide it up
 
-            // Remove the 'card-selected' class from all pet-card elements
+            // Remove both classes from all pet cards
             document.querySelectorAll(".pet-card").forEach((card) => {
+                card.classList.remove("grayscale");
                 card.classList.remove("card-selected");
+            });
+
+            // Add the 'grayscale' class to unselected pet cards
+            document.querySelectorAll(".pet-card").forEach((card) => {
+                if (card.id !== `pet-card${selectedCard}`) {
+                    card.classList.add("grayscale");
+                }
             });
 
             // Add the 'card-selected' class to the selected pet-card
@@ -188,10 +197,31 @@
             selectedPetCard.classList.add("card-selected");
         }
 
+        function hideSlideUp() {
+            const slideUp = document.getElementById("slide-up");
+            slideUp.style.transform = "translateY(100%)"; // Slide it down to hide
+
+            // Remove the 'grayscale' class from all pet-card elements
+            document.querySelectorAll(".pet-card").forEach((card) => {
+                card.classList.remove("grayscale");
+                card.classList.remove("card-selected");
+            });
+        }
+
         function navigateToNextPage() {
             // Replace the URL with the desired URL
             window.location.href =
                 "https://daoistfullstackapps.github.io/edukTasks/questions";
         }
+        // Add an event listener to the document to handle clicks
+        document.addEventListener("click", function (event) {
+            // Check if the clicked element is not a pet card or the pop-up
+            if (
+                event.target.id == "slide-up" &&
+                event.target.id !== "next-button"
+            ) {
+                hideSlideUp(); // Hide the pop-up
+            }
+        });
     </script>
 </html>
