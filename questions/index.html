@@ -65,9 +65,9 @@
     <script>
         // Define an array of text content for each part
         const bubbleContentArray = [
+            "<p>Hi! Juan I'm Lakandula</p>",
             "<p>I'll be your guide in this adventure to explore the islands and cities of the Philippines.</p>",
-            '<p>What is your name?</p><input type = "text" id = "user-name-input"></input>',
-            '<p>Hi Juan! I’m Bayani</p>',
+            "<p>Before we start, I need to know what your skills are.</p>",
         ];
 
         // Initialize a variable to keep track of the current text index
@@ -84,8 +84,8 @@
                 currentContentIndex++;
             } else {
                 // You've reached the end of the text content
-                bubbleContent.innerHTML = "<p>Now let's choose your Avatar.</p>";
-                nextButton.innerHTML = '<a href="https://daoistfullstackapps.github.io/edukTasks/avatar" style="text-decoration: none; color: white;">Next</a>';
+                bubbleContent.innerHTML =  '<p>In this adventure, you’ll need to answer some questions to get through challenges.</p>';
+                nextButton.innerHTML = '<a href="https://daoistfullstackapps.github.io/edukTasks/map" style="text-decoration: none; color: white;">Next</a>';
             }
         }
 
