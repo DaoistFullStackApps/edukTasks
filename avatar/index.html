@@ -18,29 +18,27 @@
         <title>Mathayog</title>
 
         <style>
-            /* CSS to style your pop-up div */
-            .pop-up {
+            /* CSS to style your slide-up div */
+            .slide-up {
                 display: flex;
                 align-items: baseline;
                 justify-content: flex-end;
 
                 position: fixed;
-                bottom: -100%; /* Initially hidden below the screen */
+                bottom: 0; /* Initially at the bottom of the screen */
                 left: 0;
 
                 height: 8rem;
                 width: 100%;
                 background-color: #ffffff;
-                transition: bottom 5s ease-in-out; /* Adjust the duration and easing as needed */
+                transform: translateY(
+                    100%
+                ); /* Initially hidden below the screen */
+                transition: transform 0.5s ease-in-out; /* Adjust the duration and easing as needed */
 
                 box-shadow: 0px -5px 15px rgba(0, 0, 0, 0.1);
                 padding: 1rem;
                 z-index: 999; /* Adjust the z-index as needed */
-            }
-
-            /* CSS class to hide the pop-up div */
-            .hidden {
-                display: none;
             }
 
             .card-selected {
@@ -87,7 +85,7 @@
                             <div
                                 class="pet-card"
                                 id="pet-card1"
-                                onclick="showPopUp(1)"
+                                onclick="showSlideUp(1)"
                             >
                                 <div class="pet-img-frame">
                                     <img
@@ -108,7 +106,7 @@
                             <div
                                 class="pet-card"
                                 id="pet-card2"
-                                onclick="showPopUp(2)"
+                                onclick="showSlideUp(2)"
                             >
                                 <div class="pet-img-frame">
                                     <img
@@ -129,7 +127,7 @@
                             <div
                                 class="pet-card"
                                 id="pet-card3"
-                                onclick="showPopUp(3)"
+                                onclick="showSlideUp(3)"
                             >
                                 <div class="pet-img-frame">
                                     <img
@@ -150,7 +148,7 @@
                     </div>
                 </div>
 
-                <div class="pop-up hidden" id="pop-up">
+                <div class="pop-up slide-up" id="slide-up">
                     <button
                         class="btn"
                         style="width: 22rem; height: 5rem; margin-right: 8rem"
@@ -163,11 +161,9 @@
         </div>
     </body>
     <script>
-        function showPopUp(selectedCard) {
-            const popUp = document.getElementById("pop-up");
-            popUp.style.bottom = "0"; // Show the pop-up by setting bottom to 0
-            popUp.classList.remove("hidden"); // Remove the 'hidden' class
-
+        function showSlideUp(selectedCard) {
+            const slideUp = document.getElementById("slide-up");
+            slideUp.style.transform = "translateY(0%)"; // Slide it up
             // Remove the 'card-selected' class from all pet-card elements
             document.querySelectorAll(".pet-card").forEach((card) => {
                 card.classList.remove("card-selected");
@@ -178,6 +174,11 @@
                 `pet-card${selectedCard}`
             );
             selectedPetCard.classList.add("card-selected");
+        }
+
+        function hideSlideUp() {
+            const slideUp = document.getElementById("slide-up");
+            slideUp.style.transform = "translateY(100%)"; // Slide it down to hide
         }
 
         function navigateToNextPage() {
