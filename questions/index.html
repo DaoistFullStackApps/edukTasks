@@ -50,7 +50,10 @@
                                 class="bubble-text-content"
                                 id="bubble-content"
                             ></div>
-                            <div class="bubble-bottom-section">
+                            <div
+                                class="bubble-bottom-section"
+                                id="bubble-bottom-section"
+                            >
                                 <button class="btn" id="next-button">
                                     Next
                                 </button>
@@ -79,7 +82,7 @@
 
         // Get references to elements
         const bubbleContent = document.getElementById("bubble-content");
-        const nextButton = document.getElementById("next-button");
+        const nextButton = document.getElementById("bubble-bottom-section");
 
         // Function to update the text content
         function updateBubbleContent() {
@@ -92,10 +95,15 @@
                 bubbleContent.innerHTML =
                     "<p>But first, let’s choose a plane to board.</p>";
                 nextButton.innerHTML =
-                    '<a href="https://daoistfullstackapps.github.io/edukTasks/map" style="text-decoration: none; color: white;">Next</a>';
+                    '<button class="btn" id="next-button" onclick="navigateToNextPage()">Next</button>';
             }
         }
 
+        function navigateToNextPage() {
+            // Replace the URL with the desired URL
+            window.location.href =
+                "https://daoistfullstackapps.github.io/edukTasks/map";
+        }
         // Add a click event listener to the button
         nextButton.addEventListener("click", updateBubbleContent);
 
