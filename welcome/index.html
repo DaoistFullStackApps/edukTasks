@@ -41,7 +41,7 @@
                     </div>
                 </div>
             </nav>
-
+ 
             <main class="main-container" id="root">
                 <div class="welcome-container">
                     <div class="dialog-section">
@@ -65,9 +65,10 @@
     <script>
         // Define an array of text content for each part
         const bubbleContentArray = [
-            "<p>I'll be your guide in this adventure to explore the islands and cities of the Philippines.</p>",
-            '<p>What is your name?</p><input type = "text" id = "user-name-input"></input>',
-            '<p>Hi Juan! I’m Lakandula</p>',
+            "<p>Welcome, Juan ! I'm Lakandula.</p>",
+            // '<p>What is your name?</p><input type = "text" id = "user-name-input"></input>',
+            "<p>I'll be your guide in this math adventure.</p>",
+            "<p>You will unlock the city's secrets and collect gold coins.</p>",
         ];
 
         // Initialize a variable to keep track of the current text index
@@ -84,7 +85,7 @@
                 currentContentIndex++;
             } else {
                 // You've reached the end of the text content
-                bubbleContent.innerHTML = "<p>Now let's choose your Avatar.</p>";
+                bubbleContent.innerHTML = "<p>First, let's choose your Avatar.</p>";
                 nextButton.innerHTML = '<a href="https://daoistfullstackapps.github.io/edukTasks/avatar" style="text-decoration: none; color: white;">Next</a>';
             }
         }
