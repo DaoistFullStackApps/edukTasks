@@ -160,15 +160,12 @@
 
                 <div class="pop-up hidden" id="pop-up">
                     <button
-                    class="btn"
-                    style="width: 22rem; height: 5rem; margin-right: 8rem"
-                >
-                    <a
-                        href="https://daoistfullstackapps.github.io/edukTasks/questions"
-                        style="text-decoration: none; color: white"
-                        >Next</a
+                        class="btn"
+                        style="width: 22rem; height: 5rem; margin-right: 8rem"
+                        onclick="navigateToNextPage()"
                     >
-                </button>
+                        Next
+                    </button>
                 </div>
             </main>
         </div>
@@ -189,6 +186,12 @@
                 `pet-card${selectedCard}`
             );
             selectedPetCard.classList.add("card-selected");
+        }
+
+        function navigateToNextPage() {
+            // Replace the URL with the desired URL
+            window.location.href =
+                "https://daoistfullstackapps.github.io/edukTasks/questions";
         }
     </script>
 </html>
