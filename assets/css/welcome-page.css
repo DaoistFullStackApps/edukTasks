@@ -19,28 +19,21 @@
 
 .welcome-container::before {
   content: "";
-  position: absolute;
-  /* Change to absolute */
+  position: absolute; /* Change to absolute */
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(105, 215, 246, 0.8);
-  /* Background color with opacity */
+  background: rgba(105, 215, 246, 0.8); /* Background color with opacity */
   z-index: 1;
 
-  animation-name: fadeIn;
-  /* Reference the animation keyframes */
-  animation-duration: 0.5s;
-  /* Duration of the animation */
-  animation-timing-function: ease-in-out;
-  /* Timing function for smooth animation */
-  animation-fill-mode: forwards;
-  /* Keeps the final state of the animation */
-  opacity: 0;
-  /* Start with 0 opacity (invisible) */
+  animation-name: fadeIn; /* Reference the animation keyframes */
+  animation-duration: 0.5s; /* Duration of the animation */
+  animation-timing-function: ease-in-out; /* Timing function for smooth animation */
+  animation-fill-mode: forwards; /* Keeps the final state of the animation */
+  opacity: 0; /* Start with 0 opacity (invisible) */
 }
-
+ 
 
 .dialog-section {
   display: flex;
@@ -54,16 +47,11 @@
   position: relative;
   z-index: 3;
 
-  animation-name: fadeIn;
-  /* Reference the animation keyframes */
-  animation-duration: 1.75s;
-  /* Duration of the animation */
-  animation-timing-function: ease-in-out;
-  /* Timing function for smooth animation */
-  animation-fill-mode: forwards;
-  /* Keeps the final state of the animation */
-  opacity: 0;
-  /* Start with 0 opacity (invisible) */
+  animation-name: fadeIn; /* Reference the animation keyframes */
+  animation-duration: 1.75s; /* Duration of the animation */
+  animation-timing-function: ease-in-out; /* Timing function for smooth animation */
+  animation-fill-mode: forwards; /* Keeps the final state of the animation */
+  opacity: 0; /* Start with 0 opacity (invisible) */
 }
 
 #dialog-bubble {
@@ -82,7 +70,7 @@
   padding: 2.5rem;
   margin-top: 1vh;
   margin-right: 2vw;
-
+  
   position: relative;
   z-index: 4;
 
@@ -90,9 +78,8 @@
 }
 
 #dialog-bubble::after {
-  content: "";
-  /* Required for pseudo-elements with no content */
-
+  content: ""; /* Required for pseudo-elements with no content */
+  
   width: 15%;
   height: 0.5vh;
 
@@ -103,15 +90,17 @@
   border-bottom: 1px solid transparent;
   border-left: 45px solid #FFFFFF;
 
-  top: 30%;
-  /* Position it vertically in the middle */
-  left: 38.5vw;
-  /* Adjust this value to control the position of the tail */
+  top: 30%; /* Position it vertically in the middle */
+  left: 38.5vw; /* Adjust this value to control the position of the tail */
 
   position: absolute;
 }
 
 .bubble-text-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
   height: 75%;
 }
 
@@ -124,6 +113,32 @@
   line-height: 3.6rem;
 }
 
+
+.bubble-text-content input {
+  align-items: center;
+  width: 95%;
+  height: 5rem;
+  color: #4B4B4B;
+  font-family: 'Omnes-SemiBold', sans-serif;
+  font-size: 2.5rem;
+
+  word-spacing: 0.25rem;
+  line-height: 3rem;
+
+  border: 3px solid #E5E5E5;
+  border-radius: 10px;
+
+  background-color: #F9F9F9;
+  
+  margin: 2vh 1vw;
+  padding: 1.5rem;
+}
+
+
+.bubble-text-content input:focus {
+  outline-color: #859CFF; /* Change this to your desired border color */
+}
+
 .avatar-section {
   display: flex;
   align-items: center;
@@ -132,16 +147,11 @@
   position: relative;
   z-index: 2;
 
-  animation-name: fadeIn;
-  /* Reference the animation keyframes */
-  animation-duration: 0.75s;
-  /* Duration of the animation */
-  animation-timing-function: ease-in-out;
-  /* Timing function for smooth animation */
-  animation-fill-mode: forwards;
-  /* Keeps the final state of the animation */
-  opacity: 0;
-  /* Start with 0 opacity (invisible) */
+  animation-name: fadeIn; /* Reference the animation keyframes */
+  animation-duration: 0.75s; /* Duration of the animation */
+  animation-timing-function: ease-in-out; /* Timing function for smooth animation */
+  animation-fill-mode: forwards; /* Keeps the final state of the animation */
+  opacity: 0; /* Start with 0 opacity (invisible) */
 }
 
 .avatar-section img {
@@ -191,7 +201,7 @@
 
 .contentSection {
   width: 70%;
-  margin-left: 3rem;
+  margin-left:3rem;
 }
 
 .btnTest {
@@ -199,7 +209,7 @@
   padding: 0.25rem;
   width: 20rem;
   height: 5rem;
-
+  
   font-family: 'Omnes-Bold', sans-serif;
   font-size: 1.75rem;
   color: white;
@@ -208,10 +218,9 @@
   background-size: cover;
   background-repeat: no-repeat;
   z-index: 1;
+  
+  cursor: pointer; /* Correct the cursor property value */
 
-  cursor: pointer;
-  /* Correct the cursor property value */
-
-  /* Set the border to transparent */
-  border: 1px solid transparent;
+   /* Set the border to transparent */
+   border: 1px solid transparent;
 }
