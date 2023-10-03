@@ -226,9 +226,7 @@
   max-width: 100%;
   width: 15rem;
   text-align: center;
-
-  font-family: 'Omnes-Regular', sans-serif;
-  font-size: 1.4rem;
+  padding-bottom: 0.25rem;
 }
 
 .map-text-content {
