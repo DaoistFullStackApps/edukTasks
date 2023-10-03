@@ -225,11 +225,10 @@
 .pet-text-content {
   max-width: 100%;
   width: 15rem;
-  text-align: left;
+  text-align: center;
 
   font-family: 'Omnes-Regular', sans-serif;
   font-size: 1.4rem;
-  text-align: left;
 }
 
 .map-text-content {
