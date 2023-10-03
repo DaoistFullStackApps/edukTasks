@@ -49,10 +49,6 @@
                 border: 0.5rem solid #859cff;
                 box-shadow: 15px 15px 0px rgba(0, 0, 0, 0.07);
             }
-
-            .grayscale {
-                filter: grayscale(100%);
-            }
         </style>
     </head>
 
@@ -81,12 +77,7 @@
             </nav>
 
             <main class="main-container" id="root">
-                <div class="flight-container">
-                    <div
-                        class="flight-scene-container"
-                        id="flight-scene-container"
-                    ></div>
-                </div>
+                <div class="flight-container"></div>
 
                 <div class="slide-up" id="slide-up">
                     <div class="flight-muning-section">
@@ -95,15 +86,27 @@
                             alt="muning-svg"
                         />
                         <div id="muning-dialog-bubble">
-                            <div class="muning-bubble-text-content" id="bubble-content">
-                                <p>Alright, let’s start. I’ll be asking you 10 math questions. Take all the time you need to answer them.</p>
+                            <div
+                                class="muning-bubble-text-content"
+                                id="bubble-content"
+                            >
+                                <p>
+                                    Alright, let’s start. I’ll be asking you 10
+                                    math questions. Take all the time you need
+                                    to answer them.
+                                </p>
                             </div>
                         </div>
                     </div>
                     <button
                         id="next-button"
                         class="btn"
-                        style="width: 20rem; height: 5rem; margin-right: 8rem"
+                        style="
+                            width: 20rem;
+                            height: 5rem;
+                            margin-right: 8rem;
+                            margin-bottom: 0.25rem;
+                        "
                         onclick="navigateToNextPage()"
                     >
                         Continue
@@ -113,32 +116,25 @@
         </div>
     </body>
     <script>
+        // Function for  the slide-up
         function showSlideUp() {
             const slideUp = document.getElementById("slide-up");
             slideUp.style.transform = "translateY(0%)"; // Slide it down to hide
         }
-
-        function hideSlide() {
-            const slideUp = document.getElementById("slide-up");
-            slideUp.style.transform = "translateY(120%)"; // Slide it down to hide
+        // Function to show the slide-up after a delay
+        function showSlideUpDelayed() {
+            setTimeout(function () {
+                showSlideUp();
+            }, 2400); // 5000 milliseconds (5 seconds) delay
         }
 
         function navigateToNextPage() {
             // Replace the URL with the desired URL
             window.location.href =
-                "https://daoistfullstackapps.github.io/edukTasks/pet";
+                "https://mathayog.github.io/placement_question/p_question_1.html";
         }
-        // Add an event listener to the document to handle clicks
-        document.addEventListener("click", function (event) {
-            // Check if the clicked element is not a pet card or the pop-up
-            if (event.target.id == "flight-scene-container") {
-                showSlideUp(); // Show the slide-up
-            } else if (
-                event.target.id == "slide-up" &&
-                event.target.id !== "next-button"
-            ) {
-                hideSlide(); // Show the slide-up
-            }
-        });
+
+        // Call the function when the page loads
+        window.addEventListener("load", showSlideUpDelayed);
     </script>
 </html>
