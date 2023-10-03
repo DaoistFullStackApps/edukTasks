@@ -186,8 +186,7 @@
     border-color: transparent;
     background-color: #859CFF;
     border-radius: 20px;
-    border-bottom: 12px solid #7187E4;
-
+    box-shadow: 0px 10px 0px #7187E4;
     margin-top: 1.75vh;
 
     transition: background-color 0.4s;
