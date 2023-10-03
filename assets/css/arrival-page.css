@@ -36,8 +36,7 @@
 }
 
 
-
-.flight-muning-section {
+.arrival-muning-section {
     display: flex;
     align-items: center;
     justify-content: start;
@@ -59,7 +58,7 @@
     /* Start with 0 opacity (invisible) */
 }
 
-.flight-muning-section img {
+.arrival-muning-section img {
     width: 19.75rem;
     max-width: 20vw;
     height: auto;
@@ -73,45 +72,48 @@
 }
 
 
-#muning-dialog-bubble {
+#muning-dialog-bubble-arrival {
     display: flex;
     flex-direction: column;
     gap: 1vh;
-  
-    width: 72%;  
+
+    width: 72%;
     max-height: 50%;
     height: 14.5vh;
     min-height: fit-content;
-  
+
     background-color: #ffffff;
-  
+
     border-radius: 20px;
     box-shadow: 1rem 1rem 0px rgba(0, 0, 0, 0.2);
 
-    
+
     position: relative;
     z-index: 4;
-  
+
     overflow: visible;
-  }
-  
-  #muning-dialog-bubble::after {
-    content: ""; /* Required for pseudo-elements with no content */
-    
+}
+
+#muning-dialog-bubble-arrival::after {
+    content: "";
+    /* Required for pseudo-elements with no content */
+
     width: 15%;
     height: 0.5vh;
-  
+
     border-top: 45px solid transparent;
     border-bottom: 1px solid transparent;
     border-right: 45px solid #ffffff;
 
     position: absolute;
-    top: 20%; /* Position it vertically in the middle */
-    left: -9.5vw; /* Adjust this value to control the position of the tail */
-  
-  }
-  
-  .muning-bubble-text-content {
+    top: 20%;
+    /* Position it vertically in the middle */
+    left: -9.5vw;
+    /* Adjust this value to control the position of the tail */
+
+}
+
+.muning-bubble-text-content {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -119,17 +121,17 @@
     min-width: min-content;
     max-width: 90%;
     height: 100%;
-    
+
     padding: 1rem 2rem;
     z-index: 5;
-  }
-  
-  
-  .muning-bubble-text-content p {
+}
+
+
+.muning-bubble-text-content p {
     color: #4B4B4B;
     font-family: 'Omnes-SemiBold', sans-serif;
     font-size: 2rem;
-  
+
     word-spacing: 0.25rem;
     line-height: 2.5rem;
-  }
+}
