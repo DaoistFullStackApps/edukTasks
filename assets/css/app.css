@@ -35,6 +35,19 @@
   }
 }
 
+/* Define the keyframes for the fade-out animation */
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    /* Start with 1 opacity */
+  }
+
+  to {
+    opacity: 0;
+    /* End with 0 opacity (hidden) */
+  }
+}
+
 @keyframes hover {
 
   /* make your image go up and down by 5px in y-axis */
