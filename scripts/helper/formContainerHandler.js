@@ -49,7 +49,7 @@ function redirectToPlacement(event) {
     event.preventDefault(); 
 
     // Redirect to the external URL
-    window.location.href = "https://daoistfullstackapps.github.io/edukTasks/welcome";
+    window.location.href = "../welcome/";
 }
 
 
