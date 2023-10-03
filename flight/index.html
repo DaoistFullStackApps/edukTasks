@@ -22,8 +22,9 @@
             /* CSS to style your slide-up div */
             .slide-up {
                 display: flex;
+                flex-direction: row;
                 align-items: flex-end;
-                justify-content: flex-end;
+                justify-content: space-between;
 
                 position: fixed;
                 bottom: 0; /* Initially at the bottom of the screen */
@@ -31,15 +32,17 @@
 
                 height: 13.25rem;
                 width: 100%;
-                background-color: #ffffff;
+                background-color: #ffd15b;
                 transform: translateY(
-                    100%
+                    120%
                 ); /* Initially hidden below the screen */
                 transition: transform 0.5s ease-in-out; /* Adjust the duration and easing as needed */
 
                 box-shadow: 0px -5px 15px rgba(0, 0, 0, 0.1);
                 padding: 1rem;
                 z-index: 999; /* Adjust the z-index as needed */
+
+                overflow: visible;
             }
 
             .card-selected {
@@ -86,13 +89,19 @@
                 </div>
 
                 <div class="slide-up" id="slide-up">
+                    <div class="flight-muning-section">
+                        <img
+                            src="../assets/images/svgs/muning.svg"
+                            alt="muning-svg"
+                        />
+                    </div>
                     <button
                         id="next-button"
                         class="btn"
-                        style="width: 22rem; height: 5rem; margin-right: 8rem"
+                        style="width: 20rem; height: 5rem; margin-right: 8rem"
                         onclick="navigateToNextPage()"
                     >
-                        Next
+                        Continue
                     </button>
                 </div>
             </main>
@@ -106,7 +115,7 @@
 
         function hideSlide() {
             const slideUp = document.getElementById("slide-up");
-            slideUp.style.transform = "translateY(100%)"; // Slide it down to hide
+            slideUp.style.transform = "translateY(120%)"; // Slide it down to hide
         }
 
         function navigateToNextPage() {
